@@ -56,15 +56,18 @@ struct replacement_policy *lru_replacement_policy_new(uint32_t sets, uint32_t as
 void rand_cache_access(struct replacement_policy *replacement_policy,
                        struct cache_system *cache_system, uint32_t set_idx, uint32_t tag)
 {
-    // TODO update the RAND replacement policy state given a new memory access
+    // update the RAND replacement policy state given a new memory access
+    //printf("test9\n");
+
 }
 
 uint32_t rand_eviction_index(struct replacement_policy *replacement_policy,
                              struct cache_system *cache_system, uint32_t set_idx)
 {
-    // TODO return the index within the set that should be evicted.
-
-    return 0;
+    //printf("test8\n");
+    // return the index within the set that should be evicted.
+    
+    return (rand() % cache_system->associativity);
 }
 
 void rand_replacement_policy_cleanup(struct replacement_policy *replacement_policy)
